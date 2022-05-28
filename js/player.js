@@ -7,7 +7,7 @@ class Player {
       this.h = 80
       this.vx = 0
       this.vy = 0
-      this.g = 0.05
+      this.g = 0.0002
       this.ay = 0
       this.ax = 0
   
@@ -15,10 +15,10 @@ class Player {
       this.img.src = '/media/buzo sin fondo.png'
       this.img.frames = 10
       this.img.frame = 0
-      
-      
-      
+            
       this.tick = 0
+
+      this.breathe = new Audio('') //Audio para respiración
     }
   
     draw() {
@@ -60,13 +60,39 @@ class Player {
         if (this.img.frame > 9) {
         this.img.frame = 0
         }
-      }    
+      }
+      
+      if (this.y < 0) {
+        this.y = 0
+        this.vy = 0
+      }
+
+      if(this.y + this.h > this.ctx.canvas.height) {
+        this.y = this.ctx.canvas.height - this.h;
+        this.vy = 0
+      }
+
+      if (this.x + this.w > this.ctx.canvas.width) 
+        {this.x = this.ctx.canvas.width - this.w;
+        this.vx = 0
+      }
+
+      if (this.x < -25) {
+        this.x = - 25
+        thisvx = 0
+      }
+
+
     } 
   
     keyDown(key){
       if (key === UP) {
        this.ay = -0.1
+       this.breathe.play()
      } 
+     if (key === DOWN) {
+      this.ay = 0.1
+    } 
       if (key === RIGHT) {
         this.ax = 0.1
       }
@@ -79,6 +105,9 @@ class Player {
       if (key === UP) {
         this.ay = 0
       }
+      if (key === DOWN) {
+        this.ay = 0
+      } 
       if (key === RIGHT) {
         this.ax = 0
       }

@@ -7,10 +7,13 @@ class Game {
         this.interval = null;
     
         this.setListener()
+        this.audio = new Audio ('/audio/Punk Rock Factory - Under The Sea (from The Little Mermaid).mp3') //Audio fondo juego
+        this.audio.volume = 0.02
       }
     
       start() {
         //TODO: start the loop
+        this.audio.play()
         this.interval = setInterval(() => {
           this.clear() 
           this.draw()
@@ -19,6 +22,7 @@ class Game {
       }
     
       stop() {
+        this.audio.pause()
         //TODO: stop the loop
         clearInterval(this.interval) 
         this.interval = null
