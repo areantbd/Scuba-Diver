@@ -1,5 +1,5 @@
-const UP = 87
-const DOWN = 83
-const LEFT = 65
-const RIGHT = 68
-const FIRE = 86
+const UP = 87 //W
+const DOWN = 83 //S
+const LEFT = 65 //A
+const RIGHT = 68 //D
+const PHOTO = 18 //ALT GR

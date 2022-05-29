@@ -6,7 +6,7 @@ class Bubbles {
       this.w = 150
       this.h = 80
   
-      const audio = new Audio('') //Audio para burbujas
+      const audio = new Audio('/audio/bubbles.mp3') //Audio para burbujas
       audio.play()
       
       

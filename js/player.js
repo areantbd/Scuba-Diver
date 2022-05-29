@@ -7,7 +7,7 @@ class Player {
       this.h = 80
       this.vx = 0
       this.vy = 0
-      this.g = 0.0002
+      this.g = 0//.0002
       this.ay = 0
       this.ax = 0
   
@@ -18,7 +18,9 @@ class Player {
             
       this.tick = 0
 
-      this.breathe = new Audio('') //Audio para respiración
+      this.breathe = new Audio('/audio/breathe.mp3') //Audio para respiración
+      this.bubbles = new Audio('/audio/bubbles.mp3')
+      this.photo = new Audio('/audio/photo.mp3')
     }
   
     draw() {
@@ -87,23 +89,33 @@ class Player {
   
     keyDown(key){
       if (key === UP) {
-       this.ay = -0.1
+       this.ay = -0.05
        this.breathe.play()
-     } 
-     if (key === DOWN) {
-      this.ay = 0.1
-    } 
+       this.bubbles.pause()
+       this.bubbles.currentTime = 0
+      } 
+      if (key === DOWN) {
+      this.ay = 0.05
+      this.breathe.pause()
+      this.breathe.currentTime = 0
+      this.bubbles.play()
+      } 
       if (key === RIGHT) {
         this.ax = 0.1
       }
       if (key === LEFT){
         this.ax = -0.1
       }
+      if (key === PHOTO){
+        this.photo.pause()
+        this.photo.currentTime = 0
+      }
     }
   
     keyUp(key){
       if (key === UP) {
         this.ay = 0
+        //this.breathe.pause()
       }
       if (key === DOWN) {
         this.ay = 0
@@ -113,6 +125,9 @@ class Player {
       }
       if (key === LEFT){
         this.ax = 0
+      }
+      if (key === PHOTO){
+        this.photo.play()
       }
     }
   }
