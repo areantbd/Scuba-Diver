@@ -21,6 +21,8 @@ class Player {
       this.breathe = new Audio('/audio/breathe.mp3') //Audio para respiración
       this.bubbles = new Audio('/audio/bubbles.mp3')
       this.photo = new Audio('/audio/photo.mp3')
+
+      //this.shoot = new Shoot(this.ctx, this.x + this.w, this.y + this.h)
     }
   
     draw() {
@@ -36,10 +38,10 @@ class Player {
         this.h
       )
       
+      //this.shoot.draw()
     }
   
     move() {
-      //TODO: add speed to position
       this.x += this.vx
       this.y += this.vy
       this.vy += this.g
@@ -50,12 +52,14 @@ class Player {
       } else if (this.vx < -1) {
         this.vx = -1
       }
+
+      //this.shoot.move()
       
       
   
       this.tick++
   
-      if (this.tick > 5 && (this.ay || this.ax)){
+      if (this.tick > 6 && (this.ay || this.ax)){
         this.tick = 0
         this.img.frame++
         
@@ -128,6 +132,11 @@ class Player {
       }
       if (key === PHOTO){
         this.photo.play()
+        //this.shoot()
       }
     }
+
+    /* shoot() {
+      new Shoot(this.ctx, this.x + this.w, this.y + this.h)
+    } */
   }
