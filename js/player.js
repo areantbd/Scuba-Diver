@@ -91,7 +91,7 @@ class Player {
 
       if (this.x < -25) {
         this.x = - 25
-        thisvx = 0
+        this.vx = 0
       }
 
 

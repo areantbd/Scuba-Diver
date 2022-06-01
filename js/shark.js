@@ -1,15 +1,15 @@
-class Jellyfish {
+class Shark {
     constructor(ctx) {
         this.ctx = ctx
-        this.x = 900
-        this.y = 20
-        this.w = 80
+        this.x = 800
+        this.y = 250
+        this.w = 150
         this.h = 80
-        this.vx = -0.5
+        this.vx = -1.2
 
         this.img = new Image()
-        this.img.src = '/media/Jellyfish.png'
-        this.img.frames = 11
+        this.img.src = '/media/Shark.png'
+        this.img.frames = 10
         this.img.frame = 0
 
         this.tick = 0
@@ -18,7 +18,7 @@ class Jellyfish {
     draw() {
         this.ctx.drawImage(
             this.img,
-            this.img.frame * this.img.width /this.img.frames,
+            this.img.frame * (this.img.width + 2) / this.img.frames,
             0,
             this.img.width / this.img.frames,
             this.img.height,
@@ -27,23 +27,25 @@ class Jellyfish {
             this.w,
             this.h
         )
+        
+
     }
 
     move() {
         this.x += this.vx
-
+        
         this.tick++
-        if (this.tick > 5) {
+        if (this.tick > 10) {
             this.tick = 0
             this.img.frame++
+            console.log(this.img.frame)
 
-            if (this.img.frame > 10) {
+            if (this.img.frame > 9) {
                 this.img.frame = 0
             }
         }
-
         if (this.x + this.w <= 0) {
-            this.x = 800
+            this.x = 1400
         }
     }
 }
