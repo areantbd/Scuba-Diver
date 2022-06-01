@@ -18,11 +18,16 @@ class Player {
             
       this.tick = 0
 
-      this.breathe = new Audio('/audio/breathe.mp3') //Audio para respiración
-      this.bubbles = new Audio('/audio/bubbles.mp3')
-      this.photo = new Audio('/audio/photo.mp3')
+      this.breathe = new Audio('/audio/breathe.mp3')  //Audio para respiración
+      this.bubbles = new Audio('/audio/bubbles.mp3')  //Audio para burbujas
+      this.photo = new Audio('/audio/photo.mp3')      //Audio para foto
 
-      //this.shoot = new Shoot(this.ctx, this.x + this.w, this.y + this.h)
+      /* this.shoot = new Shoot(
+          this.ctx,
+          this.x + this.w,
+          this.y + this.h,
+          this.w = 250,
+          this.h = 100) */
     }
   
     draw() {
@@ -56,7 +61,7 @@ class Player {
       //this.shoot.move()
       
       
-  
+      //tick para regular la velocidad de frames del buzo
       this.tick++
   
       if (this.tick > 6 && (this.ay || this.ax)){
@@ -68,6 +73,7 @@ class Player {
         }
       }
       
+      //Límites de pantalla
       if (this.y < 0) {
         this.y = 0
         this.vy = 0
@@ -119,7 +125,6 @@ class Player {
     keyUp(key){
       if (key === UP) {
         this.ay = 0
-        //this.breathe.pause()
       }
       if (key === DOWN) {
         this.ay = 0
@@ -132,7 +137,7 @@ class Player {
       }
       if (key === PHOTO){
         this.photo.play()
-        //this.shoot()
+        //this.shoot.draw()
       }
     }
 
