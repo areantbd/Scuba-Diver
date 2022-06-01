@@ -6,6 +6,7 @@ class Game {
         this.player = new Player(ctx)
         this.stingray = new Stingray(ctx)
         this.fish = new Fish(ctx)
+        this.jellyfish = new Jellyfish(ctx)
         this.interval = null;
     
         this.setListener()
@@ -43,6 +44,7 @@ class Game {
         //this.bubbles.draw()
         this.stingray.draw()
         this.fish.draw()
+        this.jellyfish.draw()
       }
     
       move() {
@@ -51,6 +53,7 @@ class Game {
         //this.bubbles.move()
         this.stingray.move()
         this.fish.move()
+        this.jellyfish.move()
       }
     
       setListener() {
