@@ -8,6 +8,10 @@ class Game {
         this.fish = new Fish(ctx)
         this.jellyfish = new Jellyfish(ctx)
         this.shark = new Shark(ctx)
+        this.coral = new Coral(ctx)
+        this.seaweed = new Seaweed(ctx)
+        this.barrel = new Barrel(ctx)
+        this.mine = new Mine(ctx)
         this.interval = null;
     
         this.setListener()
@@ -41,12 +45,16 @@ class Game {
     
       draw() {
         this.bg.draw()
-        this.stingray.draw()
-        this.fish.draw()
+        this.coral.draw()
         this.player.draw()
         //this.bubbles.draw()
         this.jellyfish.draw()
         this.shark.draw()
+        this.seaweed.draw()
+        this.stingray.draw()
+        this.barrel.draw()
+        this.fish.draw()
+        this.mine.draw()
       }
     
       move() {
@@ -57,6 +65,10 @@ class Game {
         this.fish.move()
         this.jellyfish.move()
         this.shark.move()
+        this.coral.move()
+        this.seaweed.move()
+        this.barrel.move()
+        this.mine.move()
       }
     
       setListener() {

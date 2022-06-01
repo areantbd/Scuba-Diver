@@ -38,7 +38,6 @@ class Shark {
         if (this.tick > 10) {
             this.tick = 0
             this.img.frame++
-            console.log(this.img.frame)
 
             if (this.img.frame > 9) {
                 this.img.frame = 0

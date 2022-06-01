@@ -5,7 +5,7 @@ class Jellyfish {
         this.y = 20
         this.w = 80
         this.h = 80
-        this.vx = -0.5
+        this.vx = -0.8
 
         this.img = new Image()
         this.img.src = '/media/Jellyfish.png'
