@@ -19,7 +19,8 @@ class Player {
       this.tick = 0
 
       this.breathe = new Audio('/audio/breathe.mp3')  //Audio para respiración
-      this.bubbles = new Audio('/audio/bubbles.mp3')  //Audio para burbujas
+      this.bubbles = new Bubbles(ctx)
+      this.bubblesAudio = new Audio('/audio/bubbles.mp3')  //Audio para burbujas
       this.photo = new Audio('/audio/photo.mp3')      //Audio para foto
 
       /* this.shoot = new Shoot(
@@ -42,6 +43,9 @@ class Player {
         this.w,
         this.h
       )
+      
+      this.bubbles.draw(this.x, this.y)
+      // console.log('drawing: x' + this.x)
       
       //this.shoot.draw()
     }
@@ -94,21 +98,24 @@ class Player {
         this.vx = 0
       }
 
-
+      this.bubbles.move(this.x, this.y)
     } 
   
     keyDown(key){
       if (key === UP) {
        this.ay = -0.05
        this.breathe.play()
-       this.bubbles.pause()
-       this.bubbles.currentTime = 0
+       this.bubblesAudio.pause()
+       this.bubblesAudio.currentTime = 0
+       //this.move(this.bubbles.move())
       } 
       if (key === DOWN) {
       this.ay = 0.05
       this.breathe.pause()
       this.breathe.currentTime = 0
-      this.bubbles.play()
+      this.bubblesAudio.play()
+      //this.draw(this.bubbles.draw())
+      //this.move(this.bubbles.move())
       } 
       if (key === RIGHT) {
         this.ax = 0.1

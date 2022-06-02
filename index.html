@@ -5,12 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scuba</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="/styles/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <canvas id="canvas" width='750' height='450' ></canvas>
-    <div>
-        <button id='btn'>START</button>
+    <div class="title">
+        <h1>ScubaDiver</h1>
+    </div>
+    <div class="game">
+        <canvas id="canvas" width='750' height='450' ></canvas>
+        <div>
+            <button id='btn' class="button">START</button> 
+            <button id="mute" class="button">MUTE</button>
+        </div>
     </div>
     <script src="js/shoot.js"></script>
     <script src="js/obstacles/barrel.js"></script>

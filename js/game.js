@@ -4,26 +4,29 @@ class Game {
     
         this.bg = new Background(ctx)
         this.player = new Player(ctx)
+        //this.bubbles = new Bubbles(ctx)
         this.stingray = new Stingray(ctx)
         this.fish = new Fish(ctx)
         this.jellyfish = new Jellyfish(ctx)
         this.shark = new Shark(ctx)
         this.coral = new Coral(ctx)
         this.seaweed = new Seaweed(ctx)
-        this.barrel = new Barrel(ctx)
+        this.barrel = new Barrel(ctx, this.player)
         this.mine = new Mine(ctx)
         this.interval = null;
+
+        
     
         this.setListener()
         this.audio = new Audio ('/audio/Punk Rock Factory - Under The Sea (from The Little Mermaid).mp3') //Audio fondo juego
-        this.audio.volume = 0//.02
-        
+        this.audio.volume = 0.05
+        this.detectCollision()
       }
     
       start() {
         this.audio.play()
         this.interval = setInterval(() => {
-          this.clear() 
+          this.clear()
           this.draw()
           this.move()
         }, 1000 / 60)
@@ -69,6 +72,7 @@ class Game {
         this.seaweed.move()
         this.barrel.move()
         this.mine.move()
+        this.detectCollision()
       }
     
       setListener() {
@@ -79,6 +83,11 @@ class Game {
         document.addEventListener('keyup', (e) => {
           this.player.keyUp(e.keyCode)
         })
+      }
+
+      detectCollision() {
+        this.barrel.collision()
+        // console.log('crash')
       }
       
     }

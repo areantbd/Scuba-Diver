@@ -27,8 +27,6 @@ class Shark {
             this.w,
             this.h
         )
-        
-
     }
 
     move() {

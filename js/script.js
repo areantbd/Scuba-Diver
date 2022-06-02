@@ -14,3 +14,15 @@ btn.addEventListener('click', function() {
     btn.innerText = 'STOP'
   }  
 })
+
+const mute = document.getElementById('mute')
+
+mute.addEventListener('click', function() {
+  if (game.audio) {    
+    game.audio.pause()
+    mute.innerText = 'PLAY'
+  } else {
+      game.audio.play()
+      mute.innerText = 'MUTE'
+  }  
+})
