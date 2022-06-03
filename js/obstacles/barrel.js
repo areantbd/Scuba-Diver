@@ -1,8 +1,7 @@
 class Barrel {
   constructor(ctx, player) {
     this.ctx = ctx;
-    // this.x = 1050;
-    this.x = 500;
+    this.x = 1050;
     this.y = 20;
     this.w = 81;
     this.h = 100;
@@ -12,6 +11,9 @@ class Barrel {
 
     this.img = new Image();
     this.img.src = "/media/Barrel.png";
+    this.audio = new Audio()
+    this.audio.src = '/audio/punch.mp3'
+    this.audio.volume = 0.1
   }
 
   draw() {
@@ -28,27 +30,13 @@ class Barrel {
 
   collision() {
     if (
-      this.x + this.w > this.player.x &&
-      this.x < this.player.x + this.player.w &&
-      this.y < this.player.y + this.player.h &&
-      this.y + this.h > this.player.y
+      this.x + this.w > (this.player.x + 30) &&
+      this.x < this.player.x + (this.player.w - 10) &&
+      this.y < this.player.y + (this.player.h - 20) &&
+      this.y + this.h > (this.player.y + 23)
     ) {
-      console.log("crash");
+      this.audio.play()
       return true;
     }
-
-    // console.log("entra");
-    // if (
-    //   (this.x < (this.player.x + this.player.w) &&
-    //     (this.y + this.h) > this.player.y) ||
-    //   (this.y < (this.player.y + this.player.h) &&
-    //     this.x < (this.player.x + this.player.w)) ||
-    //   ((this.x + this.w) > this.player.x &&
-    //     this.y < (this.player.y + this.player.h)) ||
-    //   ((this.y + this.h) > this.player.y && (this.x + this.w) > this.player.x)
-    // ) {
-    //   console.log("crash");
-    //   return true;
-    // }
   }
 }

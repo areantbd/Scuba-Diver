@@ -7,12 +7,12 @@ class Game {
         //this.bubbles = new Bubbles(ctx)
         this.stingray = new Stingray(ctx)
         this.fish = new Fish(ctx)
-        this.jellyfish = new Jellyfish(ctx)
-        this.shark = new Shark(ctx)
+        this.jellyfish = new Jellyfish(ctx, this.player)
+        this.shark = new Shark(ctx, this.player)
         this.coral = new Coral(ctx)
         this.seaweed = new Seaweed(ctx)
         this.barrel = new Barrel(ctx, this.player)
-        this.mine = new Mine(ctx)
+        this.mine = new Mine(ctx, this.player)
         this.interval = null;
 
         
@@ -87,6 +87,9 @@ class Game {
 
       detectCollision() {
         this.barrel.collision()
+        this.mine.collision()
+        this.shark.collision()
+        this.jellyfish.collision()
         // console.log('crash')
       }
       

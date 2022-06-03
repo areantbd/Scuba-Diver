@@ -44,7 +44,7 @@ class Player {
         this.h
       )
       
-      this.bubbles.draw(this.x, this.y)
+      //this.bubbles.draw(this.x, this.y)
       // console.log('drawing: x' + this.x)
       
       //this.shoot.draw()
@@ -58,8 +58,8 @@ class Player {
       this.vx += this.ax
       if (this.vx > 2) {
         this.vx = 2
-      } else if (this.vx < -1) {
-        this.vx = -1
+      } else if (this.vx < -1.5) {
+        this.vx = -1.5
       }
 
       //this.shoot.move()
