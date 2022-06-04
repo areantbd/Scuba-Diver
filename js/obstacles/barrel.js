@@ -36,6 +36,7 @@ class Barrel {
       this.y + this.h > (this.player.y + 23)
     ) {
       this.audio.play()
+      console.log('Barrel collision - 10live')
       return true;
     }
   }

@@ -60,6 +60,7 @@ class Jellyfish {
       this.y + (this.h - 10) > (this.player.y + 23)
     ) {
       this.audio.play();
+      console.log('Jellyfish collision - 15live')
       return true;
     }
   }

@@ -36,6 +36,7 @@ class Mine {
         this.y + this.h > (this.player.y + 23)
       ) {
         this.audio.play()
+        console.log('Mine collision - 50live')
         return true;
     }  
   }

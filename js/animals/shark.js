@@ -1,13 +1,14 @@
 class Shark {
-  constructor(ctx, player) {
+  constructor(ctx, player, shoot) {
     this.ctx = ctx;
     this.x = 800;
     this.y = 250;
     this.w = 150;
     this.h = 80;
     this.vx = -1.2;
-
+    
     this.player = player;
+    this.shoot = shoot;
 
     this.img = new Image();
     this.img.src = "/media/Shark.png";
@@ -53,12 +54,13 @@ class Shark {
 
   collision() {
     if (
-      this.x + this.w > (this.player.x + 30) &&
-      (this.x + 5) < this.player.x + (this.player.w - 10) &&
-      (this.y + 30) < this.player.y + (this.player.h - 20) &&
-      this.y + (this.h - 15) > (this.player.y + 23)
+      this.x + this.w > this.player.x + 30 &&
+      this.x + 5 < this.player.x + (this.player.w - 10) &&
+      this.y + 30 < this.player.y + (this.player.h - 20) &&
+      this.y + (this.h - 15) > this.player.y + 23
     ) {
       this.audio.play();
+      console.log('Shark collision - 30live')
       return true;
     }
   }

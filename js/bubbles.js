@@ -1,17 +1,12 @@
 class Bubbles {
-    constructor(ctx, x, y) {
+    constructor(ctx, player) {
       this.ctx = ctx
-      //this.x = x      //*******************funcionan en game
-      //this.y = y
-      this.x = 123    //*******************Funcionan en player
-      this.y = 175
+      this.x = 0    
+      this.y = 0
       this.w = 60
       this.h = 100
   
-      /* const audio = new Audio('/audio/bubbles.mp3') //Audio para burbujas
-      audio.play() */
-      
-      //this.player = new Player(ctx) //********funciona en game
+      this.player = player
       
       this.img = new Image()
       this.img.src = '/media/bubbles.png'
@@ -29,10 +24,8 @@ class Bubbles {
         0,
         this.img.width /this.img.frames,
         this.img.height,
-        this.x,                   //************funcionan en player
-        this.y,
-        //this.player.x + 105,    //***********funcionan en game
-        //this.player.y - 75,
+        this.player.x + 105, 
+        this.player.y - 77,
         this.w,
         this.h
       )
@@ -41,7 +34,7 @@ class Bubbles {
     move() {
       this.tick++
 
-      if (this.tick > 10) {
+      if (this.tick > 15) {
         this.tick = 0
         this.img.frame++
 

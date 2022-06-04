@@ -18,8 +18,9 @@ btn.addEventListener('click', function() {
 const mute = document.getElementById('mute')
 
 mute.addEventListener('click', function() {
-  if (game.audio) {    
+  if (game.audio.currentTime > 0) {    
     game.audio.pause()
+    game.audio.currentTime = 0
     mute.innerText = 'PLAY'
   } else {
       game.audio.play()
