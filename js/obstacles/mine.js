@@ -7,7 +7,7 @@ class Mine {
     this.h = 114;
     this.vx = -0.6;
 
-    this.player = player
+    this.player = player;
 
     this.img = new Image();
     this.img.src = "/media/Mine.png";
@@ -24,20 +24,20 @@ class Mine {
     this.x += this.vx;
 
     if (this.x + this.w <= 0) {
-      this.x = 800;
+      this.x = Math.random() * 300 + 750;
+      this.y = Math.random() * 150 + 100;
     }
   }
 
   collision() {
     if (
-        this.x + this.w > (this.player.x + 30) &&
-        this.x < this.player.x + (this.player.w - 10) &&
-        this.y < this.player.y + (this.player.h - 20) &&
-        this.y + this.h > (this.player.y + 23)
-      ) {
-        this.audio.play()
-        console.log('Mine collision - 50live')
-        return true;
-    }  
+      this.x + this.w > this.player.x + 30 &&
+      this.x < this.player.x + (this.player.w - 10) &&
+      this.y < this.player.y + (this.player.h - 20) &&
+      this.y + this.h > this.player.y + 23
+    ) {
+      this.audio.play();
+      return true;
+    }
   }
 }

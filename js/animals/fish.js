@@ -44,7 +44,8 @@ class Fish {
         }
 
         if (this.x + this.w <= 0) {
-            this.x = 1000
+            this.x = Math.random() * 200 + 900
+            this.y = Math.random() * 200 + 100
         }
     }
 }

@@ -1,36 +1,53 @@
 html,
 body {
-  font-size: 10px;
-  background-image: url(/media/not-used/ocean-sea-underwater-background-empty-bottom_107791-785.webp);
-  background-repeat: none;
-  background-size: cover;
+  background-color: black;
   margin: 0;
   padding: 0;
+}
+.gameZone {  
+  font-size: 10px;
+  background-image: url(/media/not-used/ocean-sea-underwater-background-empty-bottom_107791-785.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 5%;
+}
+
+#life-container{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+#life{
+  position: absolute;
+  top: 30%;
+  left: 5%;
 }
 
 .title {
   display: flex;
   align-items: center;
-  justify-content:center;
+  justify-content: center;
   text-align: center;
   font-family: "Pacifico", cursive;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
   text-shadow: 3px 3px 5px rgb(0, 0, 0);
   margin-bottom: -20px;
 }
-.title img{
-  width: 13rem;
-  height: 5rem;
-  margin-right: 150px;
+.title img {
+  width: 8rem;
+  height: 3rem;
+  margin-right: 100px;
   margin-bottom: -30px;
 }
 .title h1 {
   display: inline-block;
-  margin-right: 150px;
+  margin-right: 100px;
 }
 
-.title h2{
+.title h2 {
   margin-bottom: -25px;
 }
 
@@ -44,9 +61,9 @@ canvas {
   background-image: url(/media/fondo.png);
   background-repeat: no-repeat;
   background-position: center;
-  background-size:contain;
-  /* background-color: rgb(73, 73, 73); */
+  background-size: contain;
 }
+
 .button {
   color: blue;
   background-color: rgb(192, 127, 43);
@@ -55,3 +72,17 @@ canvas {
   border-radius: 5px;
 }
 
+.album {
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.album img{
+  border: 2px solid white;
+  border-bottom: 40px solid white;
+  margin: 10px;
+
+}

@@ -6,7 +6,7 @@ class Shark {
     this.w = 150;
     this.h = 80;
     this.vx = -1.2;
-    
+
     this.player = player;
     this.shoot = shoot;
 
@@ -48,7 +48,8 @@ class Shark {
       }
     }
     if (this.x + this.w <= 0) {
-      this.x = 1400;
+      this.x = Math.random() * 200 + 1000;
+      this.y = Math.random() * 200 + 100;
     }
   }
 
@@ -60,7 +61,6 @@ class Shark {
       this.y + (this.h - 15) > this.player.y + 23
     ) {
       this.audio.play();
-      console.log('Shark collision - 30live')
       return true;
     }
   }

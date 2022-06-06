@@ -1,5 +1,5 @@
 class Player {
-  constructor(ctx, shoot) {
+  constructor(ctx) {
     this.ctx = ctx;
     this.x = 20;
     this.y = 250;
@@ -10,6 +10,10 @@ class Player {
     this.g = 0.0002;
     this.ay = 0;
     this.ax = 0;
+
+    this.life = 250;
+    this.score = 0;
+    
 
     this.img = new Image();
     this.img.src = "/media/buzo sin fondo.png";
@@ -36,7 +40,7 @@ class Player {
       this.w,
       this.h
     );
-    if ((this.flash)) {
+    if (this.flash) {
       this.shoot.draw();
     }
   }
@@ -53,10 +57,10 @@ class Player {
       this.vx = -1.5;
     }
 
-    if ((this.flash)) {
+    if (this.flash) {
       this.shoot.move();
     }
-    this.flash = false
+    this.flash = false;
 
     //tick para regular la velocidad de frames del buzo
     this.tick++;
@@ -115,8 +119,6 @@ class Player {
     if (key === PHOTO) {
       this.photo.pause();
       this.photo.currentTime = 0;
-      //this.flash = true;
-      //this.shoot.draw()
     }
   }
 
@@ -138,8 +140,4 @@ class Player {
       this.flash = true;
     }
   }
-
-  /* shoot() {
-      new Shoot(this.ctx, this.x + this.w, this.y + this.h)
-    } */
 }

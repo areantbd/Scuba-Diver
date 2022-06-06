@@ -48,19 +48,19 @@ class Jellyfish {
     }
 
     if (this.x + this.w <= 0) {
-      this.x = 800;
+      this.x = Math.random() * 200 + 900;
+      this.y = Math.random() * 100 + 20;
     }
   }
 
   collision() {
     if (
-      this.x + (this.w - 10) > (this.player.x + 30) &&
-      (this.x + 5) < this.player.x + (this.player.w - 10) &&
-      (this.y + 10) < this.player.y + (this.player.h - 20) &&
-      this.y + (this.h - 10) > (this.player.y + 23)
+      this.x + (this.w - 10) > this.player.x + 30 &&
+      this.x + 5 < this.player.x + (this.player.w - 10) &&
+      this.y + 10 < this.player.y + (this.player.h - 20) &&
+      this.y + (this.h - 10) > this.player.y + 23
     ) {
       this.audio.play();
-      console.log('Jellyfish collision - 15live')
       return true;
     }
   }
