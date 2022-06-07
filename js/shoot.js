@@ -12,14 +12,16 @@ class Shoot {
 
     this.img = new Image();
     this.img.src = "/media/flash-short.png";
-    this.saveAlbum = false
+    this.saveAlbum = false;
+    this.score = 0;
   }
-
+  
   draw() {
     this.x = this.player.x + 138;
     this.y = this.player.y + 34;
     this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
     this.collision();
+    console.log(this.player.score)
   }
 
   move() {}
@@ -31,9 +33,8 @@ class Shoot {
       this.y < this.shark.y + this.shark.h &&
       this.y + this.h > this.shark.y
     ) {
-      this.saveAlbum = true
-      console.log("Shark foto! + 50pts");
-      //return true;
+      this.saveAlbum = true;
+      this.player.score += 50;
     }
 
     if (
@@ -42,9 +43,8 @@ class Shoot {
       this.y < this.fish.y + this.fish.h &&
       this.y + this.h > this.fish.y
     ) {
-      this.saveAlbum = true
-      console.log("Fish foto! + 10pts");
-      //return true;
+      this.saveAlbum = true;
+      this.player.score += 10;
     }
 
     if (
@@ -53,9 +53,8 @@ class Shoot {
       this.y < this.jellyfish.y + this.jellyfish.h &&
       this.y + this.h > this.jellyfish.y
     ) {
-      this.saveAlbum = true
-      console.log("Jellyfish foto! + 30pts");
-      //return true;
+      this.saveAlbum = true;
+      this.player.score += 30;
     }
 
     if (
@@ -64,9 +63,10 @@ class Shoot {
       this.y < this.stingray.y + this.stingray.h &&
       this.y + this.h > this.stingray.y
     ) {
-      this.saveAlbum = true
-      console.log("Stingray foto! + 15pts");
-      //return true;
+      this.saveAlbum = true;
+      this.player.score += 15;
     }
+
+    document.getElementById("score").innerText = `Score: ${parseInt(this.player.score)}`
   }
 }

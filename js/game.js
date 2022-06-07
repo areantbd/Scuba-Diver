@@ -63,6 +63,7 @@ class Game {
   draw() {
     this.bg.draw();
     this.coral.draw();
+    this.stingray.draw();
     this.player.draw();
     if (this.player.ay > 0) {
       this.bubbles.draw();
@@ -70,7 +71,6 @@ class Game {
     this.jellyfish.draw();
     this.shark.draw();
     this.seaweed.draw();
-    this.stingray.draw();
     this.barrel.draw();
     this.fish.draw();
     this.mine.draw();
@@ -126,11 +126,11 @@ class Game {
     if (this.player.life < 0) {
       this.player.life = 0;
       this.stop();
-      alert('Game Over')
-      document.location.reload()
+      /* alert('Game Over')
+      document.location.reload() */
+      document.querySelector('.game').style.visibility = 'hidden';
+      document.getElementById('gameOver').style.visibility = 'visible'
     }
     document.getElementById("life").innerText = `${parseInt(this.player.life)} bar`;
-  }
-
-  renderPoints() {}
+  }  
 }

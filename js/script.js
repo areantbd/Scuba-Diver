@@ -27,3 +27,12 @@ mute.addEventListener("click", function () {
     mute.innerText = "MUTE";
   }
 });
+
+const restart = document.getElementById("restart");
+
+restart.addEventListener("click", function () {
+    if (game.interval === null) {
+      console.log('entra')
+      location.reload();
+    }
+  });
