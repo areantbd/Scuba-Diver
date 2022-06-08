@@ -24,7 +24,7 @@ class Player {
     this.breathe = new Audio("/audio/breathe.mp3"); //Audio para respiración
     this.bubblesAudio = new Audio("/audio/bubbles.mp3"); //Audio para burbujas
     this.photo = new Audio("/audio/photo.mp3"); //Audio para foto
-    this.shoot = new Shoot(this.ctx, this.player);
+    this.shoot = new Shoot(this.ctx);
     this.flash = false;
   }
 

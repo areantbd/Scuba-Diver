@@ -4,13 +4,32 @@ body {
   margin: 0;
   padding: 0;
 }
-.gameZone {  
-  font-size: 10px;
-  background-image: url(/media/not-used/ocean-sea-underwater-background-empty-bottom_107791-785.webp);
-  background-size: cover;
-  background-position: center;
+
+canvas {
+  border: 1px solid black;
+  background-image: url(/media/fondo.png);
   background-repeat: no-repeat;
-  padding-bottom: 5%;
+  background-position: center;
+  background-size: contain;
+}
+
+#gameOver{
+  width: 100%;
+  text-align: center;
+  visibility: hidden;
+  /* visibility: visible; */
+}
+#gameOverImg{
+  width: 50%;
+  height: 450px;
+  background-image: url(/media/gameover.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -450px;
+  z-index: -1;
 }
 
 #life-container{
@@ -23,6 +42,52 @@ body {
   position: absolute;
   top: 30%;
   left: 5%;
+}
+
+#restart {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -19px;
+}
+
+.album {
+  background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.album img{
+  border: 2px solid white;
+  border-bottom: 40px solid white;
+  margin: 10px;
+
+}
+
+.button {
+  color: blue;
+  background-color: rgb(192, 127, 43);
+  border: solid 0.5px black;
+  box-shadow: 3px 3px 10px grey;
+  border-radius: 5px;
+}
+
+.game {
+  width: 100%;
+  text-align: center;
+  visibility: visible; 
+  /* visibility: hidden; */
+}
+
+.gameZone {  
+  font-size: 10px;
+  background-image: url(/media/not-used/ocean-sea-underwater-background-empty-bottom_107791-785.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 5%;
 }
 
 .title {
@@ -46,65 +111,6 @@ body {
   display: inline-block;
   margin-right: 100px;
 }
-
 .title h2 {
   margin-bottom: -25px;
-}
-
-.game {
-  width: 100%;
-  text-align: center;
-  visibility: visible; 
-}
-
-canvas {
-  border: 1px solid black;
-  background-image: url(/media/fondo.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-}
-
-#gameOver{
-  visibility: hidden;
-}
-#gameOverImg{
-  width: 50%;
-  height: 450px;
-  background-image: url(/media/gameover.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -450px;
-  z-index: -1;
-}
-#restart {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.button {
-  color: blue;
-  background-color: rgb(192, 127, 43);
-  border: solid 0.5px black;
-  box-shadow: 3px 3px 10px grey;
-  border-radius: 5px;
-}
-
-.album {
-  background-color: black;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.album img{
-  border: 2px solid white;
-  border-bottom: 40px solid white;
-  margin: 10px;
-
 }

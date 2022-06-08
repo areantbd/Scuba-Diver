@@ -1,14 +1,14 @@
 class Shoot {
-  constructor(ctx, player, stingray, shark, fish, jellyfish) {
+  constructor(ctx) {
     this.ctx = ctx;
     this.w = 150;
     this.h = 80;
 
-    this.stingray = stingray;
-    this.fish = fish;
-    this.jellyfish = jellyfish;
-    this.shark = shark;
-    this.player = player;
+    this.stingrays = null;
+    this.fishes = null;
+    this.jellyfish = null;
+    this.shark = null;
+    this.player = null;
 
     this.img = new Image();
     this.img.src = "/media/flash-short.png";
@@ -20,13 +20,11 @@ class Shoot {
     this.x = this.player.x + 138;
     this.y = this.player.y + 34;
     this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
-    this.collision();
-    console.log(this.player.score)
   }
 
   move() {}
 
-  collision() {
+    collision() {
     if (
       this.x + this.w > this.shark.x &&
       this.x < this.shark.x + this.shark.w &&
@@ -37,15 +35,20 @@ class Shoot {
       this.player.score += 50;
     }
 
-    if (
-      this.x + this.w > this.fish.x &&
-      this.x < this.fish.x + this.fish.w &&
-      this.y < this.fish.y + this.fish.h &&
-      this.y + this.h > this.fish.y
-    ) {
-      this.saveAlbum = true;
-      this.player.score += 10;
-    }
+    this.fishes.forEach(fish => {
+      if (
+        fish.catched === false &&
+        this.x + this.w > fish.x &&
+        this.x < fish.x + fish.w &&
+        this.y < fish.y + fish.h &&
+        this.y + this.h > fish.y
+      ) {
+        this.saveAlbum = true;
+        this.player.score += 10;
+        fish.catched = true
+      }
+    })
+    
 
     if (
       this.x + this.w > this.jellyfish.x &&
@@ -57,15 +60,20 @@ class Shoot {
       this.player.score += 30;
     }
 
-    if (
-      this.x + this.w > this.stingray.x &&
-      this.x < this.stingray.x + this.stingray.w &&
-      this.y < this.stingray.y + this.stingray.h &&
-      this.y + this.h > this.stingray.y
-    ) {
-      this.saveAlbum = true;
-      this.player.score += 15;
-    }
+    this.stingrays.forEach(stingray => {
+      if (
+        stingray.catched === false &&
+        this.x + this.w > stingray.x &&
+        this.x < stingray.x + stingray.w &&
+        this.y < stingray.y + stingray.h &&
+        this.y + this.h > stingray.y
+      ) {
+        this.saveAlbum = true;
+        this.player.score += 15;
+        stingray.catched = true
+      }
+    })
+    
 
     document.getElementById("score").innerText = `Score: ${parseInt(this.player.score)}`
   }
