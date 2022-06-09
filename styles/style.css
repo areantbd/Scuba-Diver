@@ -14,9 +14,14 @@ canvas {
 }
 
 #gameOver{
-  width: 100%;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   visibility: hidden;
+  /* width: 100%;
+  text-align: center;
+  visibility: hidden; */
   /* visibility: visible; */
 }
 #gameOverImg{

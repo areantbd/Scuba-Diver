@@ -1,14 +1,17 @@
 class Shark {
-  constructor(ctx, player, shoot) {
+  constructor(ctx, player) {
     this.ctx = ctx;
     this.x = 800;
     this.y = 250;
     this.w = 150;
     this.h = 80;
     this.vx = -1.2;
+    this.catched = false
+    this.points = 50
+    this.damage = 1
 
     this.player = player;
-    this.shoot = shoot;
+    //this.shoot = shoot;
 
     this.img = new Image();
     this.img.src = "/media/Shark.png";
@@ -51,6 +54,10 @@ class Shark {
       this.x = Math.random() * 200 + 1000;
       this.y = Math.random() * 200 + 100;
     }
+  }
+
+  isVisible() {
+    return this.x + this.w > 0
   }
 
   collision() {

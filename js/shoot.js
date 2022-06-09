@@ -4,10 +4,10 @@ class Shoot {
     this.w = 150;
     this.h = 80;
 
-    this.stingrays = null;
-    this.fishes = null;
-    this.jellyfish = null;
-    this.shark = null;
+    this.stingrays = [];
+    this.fishes = [];
+    this.jellyfish = [];
+    this.shark = [];
     this.player = null;
 
     this.img = new Image();
@@ -24,7 +24,18 @@ class Shoot {
 
   move() {}
 
-    collision() {
+  collidesWith(element) {
+    if (
+      element.catched === false &&
+      this.x + this.w > element.x &&
+      this.x < element.x + element.w &&
+      this.y < element.y + element.h &&
+      this.y + this.h > element.y
+    ) { return true
+      }
+  }
+
+    /* collision() {
     if (
       this.x + this.w > this.shark.x &&
       this.x < this.shark.x + this.shark.w &&
@@ -76,5 +87,5 @@ class Shoot {
     
 
     document.getElementById("score").innerText = `Score: ${parseInt(this.player.score)}`
-  }
+  } */
 }

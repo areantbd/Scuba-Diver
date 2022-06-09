@@ -1,5 +1,5 @@
 class Fish {
-  constructor(ctx) {
+  constructor(ctx, player) {
     this.ctx = ctx;
     this.x = Math.random() * 100 + 750;
     this.y = Math.random() * 250 + 100;
@@ -7,6 +7,10 @@ class Fish {
     this.h = 35;
     this.vx = -1;
     this.catched = false
+    this.points = 10
+
+    this.player = player;
+    //this.shoot = shoot;
 
     this.img = new Image();
     this.img.src = "/media/Tuna-short-left.png";
@@ -59,5 +63,21 @@ class Fish {
     createfish() {
 
     } */
+  }
+
+  isVisible() {
+    return this.x + this.w > 0
+  }
+
+  collision() {
+    if (
+      this.x + this.w > this.player.x + 30 &&
+      this.x + 5 < this.player.x + (this.player.w - 10) &&
+      this.y + 30 < this.player.y + (this.player.h - 20) &&
+      this.y + (this.h - 15) > this.player.y + 23
+    ) {
+      this.audio.play();
+      return true;
+    }
   }
 }

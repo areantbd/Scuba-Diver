@@ -6,6 +6,9 @@ class Jellyfish {
     this.w = 80;
     this.h = 80;
     this.vx = -0.8;
+    this.catched = false
+    this.points = 30
+    this.damage = 0.2
 
     this.player = player;
 
@@ -63,5 +66,9 @@ class Jellyfish {
       this.audio.play();
       return true;
     }
+  }
+
+  isVisible() {
+    return this.x + this.w > 0
   }
 }
