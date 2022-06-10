@@ -49,11 +49,6 @@ class Jellyfish {
         this.img.frame = 0;
       }
     }
-
-    if (this.x + this.w <= 0) {
-      this.x = Math.random() * 200 + 900;
-      this.y = Math.random() * 100 + 20;
-    }
   }
 
   collision() {

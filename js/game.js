@@ -59,15 +59,24 @@ class Game {
   populateFish() {
   /* const x = Math.random() * this.canvas.width
      const y = Math.random() * this.canvas.height */
-    if (this.fishTick % 200 === 0) {
+    if (this.fishTick > 200) {
       this.fishTick = 0;
       this.fishes.push(new Fish(
         this.ctx, 
         Math.random() * 100 + 750, 
         Math.random() * 250 + 100
       ))
-        console.log(this.fishes)
     }
+
+    /* if (this.fishTick % 200 === 0) {
+      //this.fishTick = 0;
+      this.fishes.push(new Fish(
+        this.ctx, 
+        Math.random() * 100 + 750, 
+        Math.random() * 250 + 100
+      ))
+        console.log(this.fishes)
+    } */
     
     if (this.stingrayTick % 600 === 0) {
       this.fishes.push(new Stingray(
@@ -77,7 +86,10 @@ class Game {
       ))
     }
 
-    if (this.sharkTick % 900 === 0) {
+    if (this.sharkTick > 400) {
+      console.log(this.sharkTick)
+      console.log(this.fishes)
+      this.sharkTick = 0
       this.fishes.push(new Shark(
         this.ctx,
         this.player,
@@ -85,6 +97,17 @@ class Game {
         /* Math.random() * 250 + 400 */700
       ))
     }
+
+    /* if (this.sharkTick % 900 === 0) {
+      console.log(this.sharkTick)
+      console.log(this.fishes)
+      this.fishes.push(new Shark(
+        this.ctx,
+        this.player,
+        Math.random() * 200 + 750,
+        /* Math.random() * 250 + 400 700
+      ))
+    }*/
 
     if (this.jellyFishTick % 800 === 0) {
       this.fishes.push(new Jellyfish(
