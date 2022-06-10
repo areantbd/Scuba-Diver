@@ -1,8 +1,8 @@
 class Shark {
   constructor(ctx, player) {
     this.ctx = ctx;
-    this.x = 800;
-    this.y = 250;
+    this.x = Math.random() * 100 + 750;
+    this.y = Math.random() * 300 + 80;
     this.w = 150;
     this.h = 80;
     this.vx = -1.2;
@@ -11,7 +11,6 @@ class Shark {
     this.damage = 1
 
     this.player = player;
-    //this.shoot = shoot;
 
     this.img = new Image();
     this.img.src = "/media/Shark.png";

@@ -4,10 +4,10 @@ class Shoot {
     this.w = 150;
     this.h = 80;
 
-    this.stingrays = [];
+    /* this.stingrays = [];
     this.fishes = [];
     this.jellyfish = [];
-    this.shark = [];
+    this.shark = []; */
     this.player = null;
 
     this.img = new Image();

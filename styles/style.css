@@ -13,28 +13,28 @@ canvas {
   background-size: contain;
 }
 
+#game {
+  width: 100%;
+  text-align: center;
+  visibility: visible; 
+  /* visibility: hidden; */
+}
+
 #gameOver{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   visibility: hidden;
-  /* width: 100%;
-  text-align: center;
-  visibility: hidden; */
   /* visibility: visible; */
 }
 #gameOverImg{
-  width: 50%;
+  width: 750px;
   height: 450px;
   background-image: url(/media/gameover.png);
   background-repeat: no-repeat;
   background-size: contain;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: -450px;
-  z-index: -1;
 }
 
 #life-container{
@@ -53,7 +53,7 @@ canvas {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -19px;
+  margin-top: 10px;
 }
 
 .album {
@@ -62,6 +62,7 @@ canvas {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  visibility: hidden;
 }
 
 .album img{
@@ -77,13 +78,6 @@ canvas {
   border: solid 0.5px black;
   box-shadow: 3px 3px 10px grey;
   border-radius: 5px;
-}
-
-.game {
-  width: 100%;
-  text-align: center;
-  visibility: visible; 
-  /* visibility: hidden; */
 }
 
 .gameZone {  

@@ -10,7 +10,6 @@ class Fish {
     this.points = 10
 
     this.player = player;
-    //this.shoot = shoot;
 
     this.img = new Image();
     this.img.src = "/media/Tuna-short-left.png";
@@ -46,23 +45,6 @@ class Fish {
         this.img.frame = 0;
       }
     }
-
-    /* this.fishTick++
-        if (this.fishTick > 600) {
-            this.fishTick = 0
-            this.createFish()
-
-        }
-
-        if (this.x + this.w <= 0) {
-            this.x = Math.random() * 300 + 600
-            this.y = Math.random() * 200 + 100
-        }
-    }
-
-    createfish() {
-
-    } */
   }
 
   isVisible() {

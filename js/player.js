@@ -43,6 +43,7 @@ class Player {
     if (this.flash) {
       this.shoot.draw();
     }
+    this.flash = false;
   }
 
   move() {
@@ -60,7 +61,6 @@ class Player {
     if (this.flash) {
       this.shoot.move();
     }
-    this.flash = false;
 
     //tick para regular la velocidad de frames del buzo
     this.tick++;
