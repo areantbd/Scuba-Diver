@@ -6,8 +6,8 @@ class Fish {
     this.w = 80;
     this.h = 35;
     this.vx = -1;
-    this.catched = false
-    this.points = 10
+    this.catched = false;
+    this.points = 10;
 
     this.player = player;
 
@@ -48,7 +48,7 @@ class Fish {
   }
 
   isVisible() {
-    return this.x + this.w > 0
+    return this.x + this.w > 0;
   }
 
   collision() {

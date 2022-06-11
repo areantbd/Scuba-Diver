@@ -25,6 +25,6 @@ class Shoot {
       this.x < element.x + element.w &&
       this.y < element.y + element.h &&
       this.y + this.h > element.y
-    ) 
+    );
   }
 }

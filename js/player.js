@@ -11,9 +11,8 @@ class Player {
     this.ay = 0;
     this.ax = 0;
 
-    this.life = 250;
+    this.life = 200;
     this.score = 0;
-    
 
     this.img = new Image();
     this.img.src = "/media/buzo sin fondo.png";
@@ -22,8 +21,11 @@ class Player {
     this.tick = 0;
 
     this.breathe = new Audio("/audio/breathe.mp3"); //Audio para respiración
+    this.breathe.volume = 0.3;
     this.bubblesAudio = new Audio("/audio/bubbles.mp3"); //Audio para burbujas
+    this.bubblesAudio.volume = 0.3;
     this.photo = new Audio("/audio/photo.mp3"); //Audio para foto
+    this.photo.volume = 0.2;
     this.shoot = new Shoot(this.ctx);
     this.flash = false;
   }
@@ -57,7 +59,6 @@ class Player {
     } else if (this.vx < -1.5) {
       this.vx = -1.5;
     }
-
 
     //tick para regular la velocidad de frames del buzo
     this.tick++;
@@ -135,7 +136,7 @@ class Player {
     if (key === PHOTO) {
       this.photo.play();
       this.flash = true;
-      setTimeout(() => this.flash = false, 100 )
+      setTimeout(() => (this.flash = false), 100);
     }
   }
 }

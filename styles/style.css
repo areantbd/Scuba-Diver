@@ -2,8 +2,7 @@ html,
 body {
   background-color: black;
   margin: 0;
-  padding: 0;
-  
+  padding: 0;  
   text-align: center;
 }
 
@@ -39,6 +38,7 @@ ul{
   visibility: hidden;
   /* visibility: visible; */
 }
+
 #gameOverImg{
   width: 750px;
   height: 450px;
@@ -75,7 +75,6 @@ ul{
   justify-content: center;
   visibility: hidden;
 }
-
 .album img{
   border: 2px solid white;
   border-bottom: 40px solid white;
@@ -87,7 +86,7 @@ ul{
   color: blue;
   background-color: rgb(192, 127, 43);
   border: solid 0.5px black;
-  box-shadow: 3px 3px 10px grey;
+  box-shadow: 3px 3px 10px rgb(80, 78, 78);
   border-radius: 5px;
 }
 

@@ -1,22 +1,20 @@
 class Jellyfish {
-  constructor(ctx, player) {
+  constructor(ctx) {
     this.ctx = ctx;
     this.x = 900;
     this.y = 20;
     this.w = 80;
     this.h = 80;
     this.vx = -0.8;
-    this.catched = false
-    this.points = 30
-    this.damage = 0.2
-
-    this.player = player;
+    this.catched = false;
+    this.points = 30;
+    this.damage = 0.2;
 
     this.img = new Image();
     this.img.src = "/media/Jellyfish.png";
     this.audio = new Audio();
     this.audio.src = "/audio/punch.mp3";
-    this.audio.volume = 0.1;
+    this.audio.volume = 0.03;
     this.img.frames = 11;
     this.img.frame = 0;
 
@@ -51,12 +49,12 @@ class Jellyfish {
     }
   }
 
-  collision() {
+  collision(player) {
     if (
-      this.x + (this.w - 10) > this.player.x + 30 &&
-      this.x + 5 < this.player.x + (this.player.w - 10) &&
-      this.y + 10 < this.player.y + (this.player.h - 20) &&
-      this.y + (this.h - 10) > this.player.y + 23
+      this.x + (this.w - 10) > player.x + 30 &&
+      this.x + 5 < player.x + (player.w - 10) &&
+      this.y + 10 < player.y + (player.h - 20) &&
+      this.y + (this.h - 10) > player.y + 23
     ) {
       this.audio.play();
       return true;
@@ -64,6 +62,6 @@ class Jellyfish {
   }
 
   isVisible() {
-    return this.x + this.w > 0
+    return this.x + this.w > 0;
   }
 }

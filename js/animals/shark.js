@@ -1,22 +1,20 @@
 class Shark {
-  constructor(ctx, player) {
+  constructor(ctx) {
     this.ctx = ctx;
     this.x = Math.random() * 100 + 750;
     this.y = Math.random() * 300 + 80;
     this.w = 150;
     this.h = 80;
     this.vx = -1.2;
-    this.catched = false
-    this.points = 50
-    this.damage = 1
-
-    this.player = player;
+    this.catched = false;
+    this.points = 50;
+    this.damage = 1;
 
     this.img = new Image();
     this.img.src = "/media/Shark.png";
     this.audio = new Audio();
     this.audio.src = "/audio/punch.mp3";
-    this.audio.volume = 0.1;
+    this.audio.volume = 0.03;
     this.img.frames = 10;
     this.img.frame = 0;
 
@@ -52,15 +50,15 @@ class Shark {
   }
 
   isVisible() {
-    return this.x + this.w > 0
+    return this.x + this.w > 0;
   }
 
-  collision() {
+  collision(player) {
     if (
-      this.x + this.w > this.player.x + 30 &&
-      this.x + 5 < this.player.x + (this.player.w - 10) &&
-      this.y + 30 < this.player.y + (this.player.h - 20) &&
-      this.y + (this.h - 15) > this.player.y + 23
+      this.x + this.w > player.x + 30 &&
+      this.x + 5 < player.x + (player.w - 10) &&
+      this.y + 30 < player.y + (player.h - 20) &&
+      this.y + (this.h - 15) > player.y + 23
     ) {
       this.audio.play();
       return true;

@@ -31,7 +31,7 @@ mute.addEventListener("click", function () {
 const restart = document.getElementById("restart");
 
 restart.addEventListener("click", function () {
-    if (game.interval === null) {
-      location.reload();
-    }
-  });
+  if (game.interval === null) {
+    location.reload();
+  }
+});
