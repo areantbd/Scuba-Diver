@@ -17,6 +17,11 @@ class Game {
     this.stingrayTick = 0;
     this.sharkTick = 0;
     this.jellyFishTick = 0;
+
+    this.catchedFishes = 0;
+    this.catchedStingrays = 0;
+    this.catchedJellyfishes = 0;
+    this.catchedSharks = 0;
     
     this.player.shoot.player = this.player;
 
@@ -34,11 +39,14 @@ class Game {
       this.clear();
       this.draw();
       this.move();
+      this.detectCollision();
       this.populateFish();
+
       this.fishTick++;
       this.stingrayTick++;
       this.sharkTick++;
       this.jellyFishTick++;
+      
       this.saveAlbum();
     }, 1000 / 60);
   }
@@ -57,8 +65,6 @@ class Game {
   }
 
   populateFish() {
-  /* const x = Math.random() * this.canvas.width
-     const y = Math.random() * this.canvas.height */
     if (this.fishTick > 200) {
       this.fishTick = 0;
       this.fishes.push(new Fish(
@@ -67,16 +73,6 @@ class Game {
         Math.random() * 250 + 100
       ))
     }
-
-    /* if (this.fishTick % 200 === 0) {
-      //this.fishTick = 0;
-      this.fishes.push(new Fish(
-        this.ctx, 
-        Math.random() * 100 + 750, 
-        Math.random() * 250 + 100
-      ))
-        console.log(this.fishes)
-    } */
     
     if (this.stingrayTick % 600 === 0) {
       this.fishes.push(new Stingray(
@@ -87,27 +83,14 @@ class Game {
     }
 
     if (this.sharkTick > 400) {
-      console.log(this.sharkTick)
-      console.log(this.fishes)
       this.sharkTick = 0
       this.fishes.push(new Shark(
         this.ctx,
         this.player,
         Math.random() * 200 + 750,
-        /* Math.random() * 250 + 400 */700
+        Math.random() * 250 + 400
       ))
     }
-
-    /* if (this.sharkTick % 900 === 0) {
-      console.log(this.sharkTick)
-      console.log(this.fishes)
-      this.fishes.push(new Shark(
-        this.ctx,
-        this.player,
-        Math.random() * 200 + 750,
-        /* Math.random() * 250 + 400 700
-      ))
-    }*/
 
     if (this.jellyFishTick % 800 === 0) {
       this.fishes.push(new Jellyfish(
@@ -117,7 +100,6 @@ class Game {
         Math.random() * 100 + 20
       ))
     }
-
   }
 
   stop() {
@@ -147,7 +129,6 @@ class Game {
   }
 
   move() {
-    this.detectCollision();
     this.bg.move();
     this.player.move();
     this.bubbles.move();
@@ -172,14 +153,23 @@ class Game {
     this.barrel.collision();
     this.mine.collision();
     this.fishes.forEach((fish) => {
-      /* if (typeof fish === 'shark') {
-        this.player.life -= 1
-      } */
-
-      if (this.player.shoot.collidesWith(fish)) {
+      if (this.player.flash && this.player.shoot.collidesWith(fish)) {
         this.player.shoot.saveAlbum = true;
         this.player.score += fish.points;
         fish.catched = true
+        if (fish instanceof Fish) {
+          this.catchedFishes += 1;
+          document.getElementById("fishCounter").innerText = `Fish: ${parseInt(this.catchedFishes)}`;
+        } else if (fish instanceof Stingray) {
+          this.catchedStingrays += 1;
+          document.getElementById("stingrayCounter").innerText = `Stingray: ${parseInt(this.catchedStingrays)}`;
+        } else if (fish instanceof Jellyfish) {
+          this.catchedJellyfishes += 1;
+          document.getElementById("jellyfishCounter").innerText = `Jellyfish: ${parseInt(this.catchedJellyfishes)}`;
+        } else if (fish instanceof Shark) {
+          this.catchedSharks += 1;
+          document.getElementById("sharkCounter").innerText = `Shark: ${parseInt(this.catchedSharks)}`;
+        }
       }
       if (fish.collision(this.player)){
         this.player.life -= fish.damage

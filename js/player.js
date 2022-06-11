@@ -43,7 +43,7 @@ class Player {
     if (this.flash) {
       this.shoot.draw();
     }
-    this.flash = false;
+    //this.flash = false;
   }
 
   move() {
@@ -58,9 +58,6 @@ class Player {
       this.vx = -1.5;
     }
 
-    if (this.flash) {
-      this.shoot.move();
-    }
 
     //tick para regular la velocidad de frames del buzo
     this.tick++;
@@ -138,6 +135,7 @@ class Player {
     if (key === PHOTO) {
       this.photo.play();
       this.flash = true;
+      setTimeout(() => this.flash = false, 100 )
     }
   }
 }
