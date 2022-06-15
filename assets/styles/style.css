@@ -8,7 +8,7 @@ body {
 
 canvas {
   border: 1px solid black;
-  background-image: url("assets/media/fondo.png");
+  background-image: url('../assets/media/fondo.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -42,7 +42,7 @@ ul{
 #gameOverImg{
   width: 750px;
   height: 450px;
-  background-image: url("assets/media/gameover.png");
+  background-image: url('../assets/media/gameover.png');
   background-repeat: no-repeat;
   background-size: contain;
   margin-top: -450px;
@@ -111,7 +111,7 @@ ul{
 
 .gameZone {  
   font-size: 10px;
-  background-image: url("assets/media/not-used/ocean-sea-underwater-background-empty-bottom_107791-785.webp");
+  background-image: url('../assets/media/not-used/ocean-sea-underwater-background-empty-bottom_107791-785.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
