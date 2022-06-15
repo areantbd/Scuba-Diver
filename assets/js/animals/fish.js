@@ -12,7 +12,7 @@ class Fish {
     this.player = player;
 
     this.img = new Image();
-    this.img.src = "/assets/media/Tuna-short-left.png";
+    this.img.src = "./assets/media/Tuna-short-left.png";
     this.img.frames = 8;
     this.img.frame = 0;
 

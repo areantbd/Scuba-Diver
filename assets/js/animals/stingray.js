@@ -12,7 +12,7 @@ class Stingray {
     this.player = player;
 
     this.img = new Image();
-    this.img.src = "/assets/media/Stingray.png";
+    this.img.src = "./assets/media/Stingray.png";
   }
 
   draw() {

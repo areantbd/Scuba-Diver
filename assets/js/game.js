@@ -27,9 +27,9 @@ class Game {
 
     this.setListener();
     this.audio = new Audio(
-      "/assets/audio/Punk Rock Factory - Under The Sea (from The Little Mermaid).mp3"
+      "./assets/audio/Punk Rock Factory - Under The Sea (from The Little Mermaid).mp3"
     ); //Audio fondo juego
-    this.audio.volume = 0.03;
+    this.audio.volume = 0.08;
     this.detectCollision();
   }
 
