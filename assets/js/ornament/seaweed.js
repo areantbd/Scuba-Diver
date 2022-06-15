@@ -8,7 +8,7 @@ class Seaweed {
     this.vx = -0.6;
 
     this.img = new Image();
-    this.img.src = "/media/Seaweed.png";
+    this.img.src = "/assets/media/Seaweed.png";
   }
 
   draw() {

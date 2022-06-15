@@ -9,7 +9,7 @@ class Bubbles {
     this.player = player;
 
     this.img = new Image();
-    this.img.src = "/media/bubbles.png";
+    this.img.src = "/assets/media/bubbles.png";
     this.img.frames = 7;
     this.img.frame = 0;
 

@@ -11,9 +11,9 @@ class Jellyfish {
     this.damage = 0.2;
 
     this.img = new Image();
-    this.img.src = "/media/Jellyfish.png";
+    this.img.src = "/assets/media/Jellyfish.png";
     this.audio = new Audio();
-    this.audio.src = "/audio/punch.mp3";
+    this.audio.src = "/assets/audio/punch.mp3";
     this.audio.volume = 0.03;
     this.img.frames = 11;
     this.img.frame = 0;
