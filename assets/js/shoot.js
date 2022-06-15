@@ -7,7 +7,7 @@ class Shoot {
     this.player = null;
 
     this.img = new Image();
-    this.img.src = "./assets/media/flash-short.png";
+    this.img.src = "assets/media/flash-short.png";
     this.saveAlbum = false;
     this.score = 0;
   }

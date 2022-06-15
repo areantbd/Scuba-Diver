@@ -9,9 +9,9 @@ class Barrel {
     this.damage = 0.5;
 
     this.img = new Image();
-    this.img.src = "./assets/media/Barrel.png";
+    this.img.src = "assets/media/Barrel.png";
     this.audio = new Audio();
-    this.audio.src = "./assets/audio/punch.mp3";
+    this.audio.src = "assets/audio/punch.mp3";
     this.audio.volume = 0.1;
   }
 

@@ -9,7 +9,7 @@ class Background {
     this.h = this.ctx.canvas.height;
 
     this.img = new Image();
-    this.img.src = "./assets/media/underwater-tileable.png";
+    this.img.src = "assets/media/underwater-tileable.png";
   }
 
   draw() {

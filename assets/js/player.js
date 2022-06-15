@@ -15,16 +15,16 @@ class Player {
     this.score = 0;
 
     this.img = new Image();
-    this.img.src = "./assets/media/buzo sin fondo.png";
+    this.img.src = "assets/media/buzo sin fondo.png";
     this.img.frames = 10;
     this.img.frame = 0;
     this.tick = 0;
 
-    this.breathe = new Audio("./assets/audio/breathe.mp3"); //Audio para respiración
+    this.breathe = new Audio("assets/audio/breathe.mp3"); //Audio para respiración
     this.breathe.volume = 0.9;
-    this.bubblesAudio = new Audio("./assets/audio/bubbles.mp3"); //Audio para burbujas
+    this.bubblesAudio = new Audio("assets/audio/bubbles.mp3"); //Audio para burbujas
     this.bubblesAudio.volume = 0.9;
-    this.photo = new Audio("./assets/audio/photo.mp3"); //Audio para foto
+    this.photo = new Audio("assets/audio/photo.mp3"); //Audio para foto
     this.photo.volume = 0.7;
     this.shoot = new Shoot(this.ctx);
     this.flash = false;

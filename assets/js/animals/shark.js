@@ -11,9 +11,9 @@ class Shark {
     this.damage = 1;
 
     this.img = new Image();
-    this.img.src = "./assets/media/Shark.png";
+    this.img.src = "assets/media/Shark.png";
     this.audio = new Audio();
-    this.audio.src = "./assets/audio/punch.mp3";
+    this.audio.src = "assets/audio/punch.mp3";
     this.audio.volume = 0.1;
     this.img.frames = 10;
     this.img.frame = 0;

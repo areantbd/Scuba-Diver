@@ -8,7 +8,7 @@ class Coral {
     this.vx = -0.6;
 
     this.img = new Image();
-    this.img.src = "./assets/media/Coral.png";
+    this.img.src = "assets/media/Coral.png";
   }
 
   draw() {
