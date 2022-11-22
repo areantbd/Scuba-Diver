@@ -20,10 +20,18 @@ Ha sido creado de manera individual utilizando HTML, canvas, CSS y JavasCript.
 <ul>
     <li>El juego trata de un buzo que tiene que ir sacando fotos de la fauna que se encuentre, teniendo cuidado de no chocar con algunos obstáculos que se encuentre y también con algunos animales que pueden dañarlo.</li>
     <li>Tenemos un contador de puntos totales y justo debajo de la pantalla de juego una burbuja por cada animal que nos podemos encontrar, que irán sumando con cada foto que saquemos de dicho animal.</li>
+    <li>Cada pez es único y sólo se puede fotografiar una vez, así que asegura el encuadre antes de disparar.</li>
     <li>Antes de empezar la partida o durante la misma disponemos de un botón para poder activar o desactivar una pista de música.</li>
     <li>Una vez terminada la partida (cuando la vida llegue a 0), tenemos 2 opciones, podemos reiniciar el juego o podemos hacer scroll-down y ver todas las fotos que hemos sacado durante la partida.</li>
 </ul>
 
 ## ¿Tienes ganas de probarlo?
 
-Es tan sencillo como hacer click <a href="https://areantbd.github.io/Scuba-Diver/" target="_blank">aquí</a>. Recuerda que sólo fnciona en PC.
+Es tan sencillo como hacer click <a href="https://areantbd.github.io/Scuba-Diver/" target="_blank">aquí</a>. Recuerda que sólo funciona en PC.
+
+## Copyright.
+
+-- Todos los sprites, imágenes y audios (salvo la respiración que es mía) usados, son sacados de internet. <br>
+-- La canción usada es <b> Under the sea</b>, del grupo <b><a href="https://punkrockfactory.com/" target="_blank">Punk rock factory</a></b> <br>
+-- Todos han sido usados con fines educativos y sin ningún ánimo de lucro.
+
