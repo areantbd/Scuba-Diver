@@ -8,11 +8,11 @@ Ha sido creado de manera individual utilizando HTML, canvas, CSS y JavasCript.
 ## Controles:
 
 <ul>
-    <li><b>A:</b> Atrás</li>
-    <li><b>S:</b> Descender</li>
-    <li><b>D:</b> Adelante</li>
-    <li><b>W:</b> Ascender</li>
-    <li><b>Alt Gr:</b> Sacar foto</li>
+    <li><b>A:</b> Atrás.</li>
+    <li><b>S:</b> Descender.</li>
+    <li><b>D:</b> Adelante.</li>
+    <li><b>W:</b> Ascender.</li>
+    <li><b>Alt Gr:</b> Sacar foto.</li>
 </ul>
 
 ## Objetivo del juego:
@@ -27,11 +27,11 @@ Ha sido creado de manera individual utilizando HTML, canvas, CSS y JavasCript.
 
 ## ¿Tienes ganas de probarlo?
 
-Es tan sencillo como hacer click <a href="https://areantbd.github.io/Scuba-Diver/" target="_blank">aquí</a>. Recuerda que sólo funciona en PC.
+Es tan sencillo como hacer click <a href="https://areantbd.github.io/Scuba-Diver/" target="_blank"><b>aquí</b></a>. Recuerda que sólo funciona en PC.
 
 ## Copyright.
 
--- Todos los sprites, imágenes y audios (salvo la respiración que es mía) usados, son sacados de internet. <br>
+-- Todos los sprites, imágenes y audios en el juego (salvo la respiración que es mía), son sacados de internet. <br>
 -- La canción usada es <b> Under the sea</b>, del grupo <b><a href="https://punkrockfactory.com/" target="_blank">Punk rock factory</a></b> <br>
 -- Todos han sido usados con fines educativos y sin ningún ánimo de lucro.
 
